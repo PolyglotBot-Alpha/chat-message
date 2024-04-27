@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: u19frpsqkpjql3
+    url: jdbc:postgresql://c9pbiquf6p6pfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d8eo18vo7fg9lt
+    password: p3da1cf6644ae2dfe046079d1c46ec8bfa702ae779adec6ef57ba401a57b082a6
+  h2:
+    console:
+      enabled: 'false # Disable if not using H2'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+sspring:
+  application:
+    name: chat-message
+server:
+  port: '8081'
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: trace
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: 'true'
