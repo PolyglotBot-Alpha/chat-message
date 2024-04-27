@@ -7,8 +7,8 @@ import java.util.List;
 
 @Mapper
 public interface ChatMapper {
-    @Select("select * from chats")
-    List<Chat> list();
+    @Select("select * from chats where user_id = #{userId}")
+    List<Chat> list(Integer userId);
 
     @Delete("delete from chats where chat_id = #{id}")
     void delete(Integer id);

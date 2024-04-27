@@ -17,10 +17,10 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
-    @GetMapping
-    public Result list() {
+    @GetMapping("/{userId}")
+    public Result list(@PathVariable Integer userId) {
         log.info("list all chats");
-        List<Chat> chatList = chatService.list();
+        List<Chat> chatList = chatService.list(userId);
         return Result.success(chatList);
     }
 

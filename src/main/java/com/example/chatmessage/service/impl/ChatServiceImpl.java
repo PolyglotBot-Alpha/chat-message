@@ -16,8 +16,8 @@ public class ChatServiceImpl implements ChatService {
     private ChatMapper chatMapper;
 
     @Override
-    public List<Chat> list() {
-        return chatMapper.list();
+    public List<Chat> list(Integer userId) {
+        return chatMapper.list(userId);
     }
 
     @Override
