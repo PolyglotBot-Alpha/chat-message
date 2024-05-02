@@ -5,9 +5,9 @@ import com.example.chatmessage.pojo.Message;
 import java.util.List;
 
 public interface MessageService {
-    List<Message> getMessages(Integer chatId);
+    List<Message> getMessages(Long chatId);
 
-    void deleteMessage(Integer messageId);
+    void deleteMessage(Long messageId);
 
     void addMessage(Message message);
 

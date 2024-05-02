@@ -8,10 +8,10 @@ import java.util.List;
 @Mapper
 public interface ChatMapper {
     @Select("select * from chats where user_id = #{userId}")
-    List<Chat> list(Integer userId);
+    List<Chat> list(Long userId);
 
     @Delete("delete from chats where chat_id = #{id}")
-    void delete(Integer id);
+    void delete(Long id);
 
     @Insert("insert into chats(user_id, chat_name, create_time, update_time) values (#{userId}, #{chatName}, #{createTime}, #{updateTime})")
     void insert(Chat chat);

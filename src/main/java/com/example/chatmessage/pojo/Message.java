@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Message {
-    private Integer messageId;
-    private Integer chatId;
-    private Integer userId;
+    private Long messageId;
+    private Long chatId;
+    private Long userId;
     private String messageContent;
     private String audio;
     private LocalDateTime createTime;

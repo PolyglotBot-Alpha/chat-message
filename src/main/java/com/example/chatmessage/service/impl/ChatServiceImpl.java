@@ -16,12 +16,12 @@ public class ChatServiceImpl implements ChatService {
     private ChatMapper chatMapper;
 
     @Override
-    public List<Chat> list(Integer userId) {
+    public List<Chat> list(Long userId) {
         return chatMapper.list(userId);
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         chatMapper.delete(id);
     }
 

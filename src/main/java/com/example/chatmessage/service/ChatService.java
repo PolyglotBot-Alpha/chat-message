@@ -5,9 +5,9 @@ import com.example.chatmessage.pojo.Chat;
 import java.util.List;
 
 public interface ChatService {
-    List<Chat> list(Integer userId);
+    List<Chat> list(Long userId);
 
-    void delete(Integer id);
+    void delete(Long id);
 
     void add(Chat chat);
 

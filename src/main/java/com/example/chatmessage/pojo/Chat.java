@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Chat {
-    private Integer chatId;
-    private Integer userId;
+    private Long chatId;
+    private Long userId;
     private String chatName;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;

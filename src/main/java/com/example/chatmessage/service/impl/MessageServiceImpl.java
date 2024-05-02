@@ -15,12 +15,12 @@ public class MessageServiceImpl implements MessageService {
     private MessageMapper messageMapper;
 
     @Override
-    public List<Message> getMessages(Integer chatId) {
+    public List<Message> getMessages(Long chatId) {
         return messageMapper.list(chatId);
     }
 
     @Override
-    public void deleteMessage(Integer messageId) {
+    public void deleteMessage(Long messageId) {
         messageMapper.deleteMessage(messageId);
     }
 
