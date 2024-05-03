@@ -16,7 +16,7 @@ public class ChatServiceImpl implements ChatService {
     private ChatMapper chatMapper;
 
     @Override
-    public List<Chat> list(Long userId) {
+    public List<Chat> list(String userId) {
         return chatMapper.list(userId);
     }
 

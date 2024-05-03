@@ -31,7 +31,7 @@ public class ChatController {
                     schema = @Schema(implementation = Result.class)))
     @ApiResponse(responseCode = "404", description = "User not found")
     @Parameter(name = "userId", description = "User ID for whom to retrieve chats", required = true)
-    public Result list(@PathVariable Long userId) {
+    public Result list(@PathVariable String userId) {
         log.info("list all chats");
         List<Chat> chatList = chatService.list(userId);
         return Result.success(chatList);

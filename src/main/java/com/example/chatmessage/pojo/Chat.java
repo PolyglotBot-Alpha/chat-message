@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Chat {
     private Long chatId;
-    private Long userId;
+    private String userId;
     private String chatName;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
