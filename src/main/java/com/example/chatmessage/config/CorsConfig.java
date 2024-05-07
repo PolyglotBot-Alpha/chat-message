@@ -1,8 +1,10 @@
 package com.example.chatmessage.config;
 
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -10,18 +12,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig {
 
     @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")  // Allows CORS requests to all routes
-                        .allowedOrigins("*")  // Allows all origins
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // Allows these methods
-                        .allowedHeaders("*")  // Allows all headers
-                        .allowCredentials(true)  // Allows credentials
-                        .maxAge(3600);  // Max age for the options request
-            }
-        };
+    public FilterRegistrationBean<CorsFilter> corsFilter() {
+        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>(new CorsFilter());
+        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        return bean;
     }
-
 }
