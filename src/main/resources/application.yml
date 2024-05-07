@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: u19frpsqkpjql3
-    url: jdbc:postgresql://c9pbiquf6p6pfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d8eo18vo7fg9lt
-    password: p3da1cf6644ae2dfe046079d1c46ec8bfa702ae779adec6ef57ba401a57b082a6
+    username: ${DATABASE_USER}
+    url: ${DATABASE_URL}
+    password: ${DATABASE_PASS}
   h2:
     console:
       enabled: 'false # Disable if not using H2'
@@ -17,7 +17,7 @@ sspring:
   application:
     name: chat-message
 server:
-  port: '8081'
+  port: ${PORT:8081}
 logging:
   level:
     org:
