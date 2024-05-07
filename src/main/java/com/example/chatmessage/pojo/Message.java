@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class Message {
     private Long messageId;
     private Long chatId;
-    private Long userId;
+    private String userId;
     private String messageContent;
     private String audio;
     private LocalDateTime createTime;
